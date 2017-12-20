@@ -5,19 +5,19 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace Spryker\Zed\SalesProductConnector\Communication\Plugin;
+namespace Spryker\Zed\SalesProductConnector\Communication\Plugin\Checkout;
 
-use Generated\Shared\Transfer\CheckoutResponseTransfer;
 use Generated\Shared\Transfer\QuoteTransfer;
-use Spryker\Zed\Checkout\Dependency\Plugin\CheckoutSaveOrderInterface;
+use Generated\Shared\Transfer\SaveOrderTransfer;
+use Spryker\Zed\Checkout\Dependency\Plugin\CheckoutDoSaveOrderInterface;
 use Spryker\Zed\Kernel\Communication\AbstractPlugin;
 
 /**
- * @deprecated Use \Spryker\Zed\SalesProductConnector\Communication\Plugin\Checkout\ItemMetadataSaverPlugin instead
+ * Requires Requires Checkout ^4.0.0
  *
  * @method \Spryker\Zed\SalesProductConnector\Business\SalesProductConnectorFacadeInterface getFacade()
  */
-class ItemMetadataSaverPlugin extends AbstractPlugin implements CheckoutSaveOrderInterface
+class ItemMetadataSaverPlugin extends AbstractPlugin implements CheckoutDoSaveOrderInterface
 {
     /**
      * Specification:
@@ -26,12 +26,12 @@ class ItemMetadataSaverPlugin extends AbstractPlugin implements CheckoutSaveOrde
      * @api
      *
      * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     * @param \Generated\Shared\Transfer\CheckoutResponseTransfer $checkoutResponse
+     * @param \Generated\Shared\Transfer\SaveOrderTransfer $saveOrderTransfer
      *
      * @return void
      */
-    public function saveOrder(QuoteTransfer $quoteTransfer, CheckoutResponseTransfer $checkoutResponse)
+    public function saveOrder(QuoteTransfer $quoteTransfer, SaveOrderTransfer $saveOrderTransfer)
     {
-        $this->getFacade()->saveItemMetadata($quoteTransfer, $checkoutResponse);
+        $this->getFacade()->saveOrderItemMetadata($quoteTransfer, $saveOrderTransfer);
     }
 }
