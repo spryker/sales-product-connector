@@ -173,7 +173,9 @@ class SalesProductConnectorRepository extends AbstractRepository implements Sale
             $filteredSuperAttributes = [];
 
             foreach ($itemTransfer->getConcreteAttributes() as $key => $value) {
-                $filteredSuperAttributes[$key] = $matchingSuperAttributesIndexedByKeys[$key];
+                if (isset($matchingSuperAttributesIndexedByKeys[$key])) {
+                    $filteredSuperAttributes[$key] = $matchingSuperAttributesIndexedByKeys[$key];
+                }
             }
 
             $supperAttributesGroupedByIdItem[$itemTransfer->getIdSalesOrderItemOrFail()] = $filteredSuperAttributes;
