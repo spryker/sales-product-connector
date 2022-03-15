@@ -174,7 +174,7 @@ class SalesProductConnectorRepository extends AbstractRepository implements Sale
 
             foreach ($itemTransfer->getConcreteAttributes() as $key => $value) {
                 if (isset($matchingSuperAttributesIndexedByKeys[$key])) {
-                    $filteredSuperAttributes[$key] = $matchingSuperAttributesIndexedByKeys[$key];
+                    $filteredSuperAttributes[$key] = $value;
                 }
             }
 
