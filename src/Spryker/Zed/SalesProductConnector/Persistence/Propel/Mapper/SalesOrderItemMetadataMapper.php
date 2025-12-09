@@ -84,8 +84,10 @@ class SalesOrderItemMetadataMapper
         $metadata = $this->getMetaData($itemTransfer);
         $entity->fromArray($metadata);
         $entity->setSuperAttributes($this->utilEncodingService->encodeJson($superAttributes) ?? '');
-        $entity->setImage($image);
         $entity->setFkSalesOrderItem($itemTransfer->getIdSalesOrderItemOrFail());
+        if ($image) {
+            $entity->setImage($image);
+        }
 
         return $entity;
     }
