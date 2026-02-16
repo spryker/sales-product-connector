@@ -28,7 +28,7 @@ interface SalesProductConnectorEntityManagerInterface
     public function saveItemsMetadataByFkSalesOrderItem(QuoteTransfer $quoteTransfer, array $supperAttributesGroupedByIdItem): void;
 
     /**
-     * @param list<int> $salesOrderItemIds
+     * @param array<int> $salesOrderItemIds
      *
      * @return void
      */
