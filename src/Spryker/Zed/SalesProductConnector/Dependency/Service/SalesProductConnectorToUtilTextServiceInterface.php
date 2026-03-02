@@ -9,12 +9,5 @@ namespace Spryker\Zed\SalesProductConnector\Dependency\Service;
 
 interface SalesProductConnectorToUtilTextServiceInterface
 {
-    /**
-     * @param string $string
-     * @param string $separator
-     * @param bool $upperCaseFirst
-     *
-     * @return string
-     */
     public function separatorToCamelCase(string $string, string $separator = '-', bool $upperCaseFirst = false): string;
 }

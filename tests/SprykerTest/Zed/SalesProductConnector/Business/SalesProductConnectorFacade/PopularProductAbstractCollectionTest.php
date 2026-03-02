@@ -31,9 +31,6 @@ class PopularProductAbstractCollectionTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -42,9 +39,6 @@ class PopularProductAbstractCollectionTest extends Unit
         $this->tester->configureTestStateMachine([BusinessHelper::DEFAULT_OMS_PROCESS_NAME]);
     }
 
-    /**
-     * @return void
-     */
     public function testPopularProductAbstractCollectionEmptyTest(): void
     {
         // Act
@@ -54,9 +48,6 @@ class PopularProductAbstractCollectionTest extends Unit
         $this->assertEmpty($productPageLoadTransfer->getProductAbstractIds());
     }
 
-    /**
-     * @return void
-     */
     public function testGetProductPageLoadTransferForOnceOrderTest(): void
     {
         // Arrange
@@ -85,9 +76,6 @@ class PopularProductAbstractCollectionTest extends Unit
         $this->assertCount(1, $productPageLoadTransfer->getProductAbstractIds());
     }
 
-    /**
-     * @return void
-     */
     public function testGetProductPageLoadTransferForMultipleOrdersTest(): void
     {
         // Arrange

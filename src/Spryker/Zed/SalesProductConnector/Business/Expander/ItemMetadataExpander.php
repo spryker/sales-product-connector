@@ -16,9 +16,6 @@ class ItemMetadataExpander implements ItemMetadataExpanderInterface
      */
     protected $salesProductConnectorRepository;
 
-    /**
-     * @param \Spryker\Zed\SalesProductConnector\Persistence\SalesProductConnectorRepositoryInterface $salesProductConnectorRepository
-     */
     public function __construct(SalesProductConnectorRepositoryInterface $salesProductConnectorRepository)
     {
         $this->salesProductConnectorRepository = $salesProductConnectorRepository;

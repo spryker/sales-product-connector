@@ -32,11 +32,6 @@ class SalesOrderItemMetadataMapper
      */
     protected SalesProductConnectorToUtilTextServiceInterface $utilTextService;
 
-    /**
-     * @param \Spryker\Zed\SalesProductConnector\Dependency\Service\SalesProductConnectorToUtilEncodingInterface $utilEncodingService
-     * @param \Spryker\Zed\SalesProductConnector\SalesProductConnectorConfig $salesProductConnectorConfig
-     * @param \Spryker\Zed\SalesProductConnector\Dependency\Service\SalesProductConnectorToUtilTextServiceInterface $utilTextService
-     */
     public function __construct(
         SalesProductConnectorToUtilEncodingInterface $utilEncodingService,
         SalesProductConnectorConfig $salesProductConnectorConfig,
@@ -92,11 +87,6 @@ class SalesOrderItemMetadataMapper
         return $entity;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return string|null
-     */
     protected function determineImage(ItemTransfer $itemTransfer): ?string
     {
         $images = $itemTransfer->getImages();

@@ -34,9 +34,6 @@ use Spryker\Zed\SalesProductConnector\SalesProductConnectorDependencyProvider;
  */
 class SalesProductConnectorBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\SalesProductConnector\Business\Model\ItemMetadataSaverInterface
-     */
     public function createItemMetadataSaver(): ItemMetadataSaverInterface
     {
         return new ItemMetadataSaver(
@@ -70,9 +67,6 @@ class SalesProductConnectorBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\SalesProductConnector\Business\Expander\ItemMetadataExpanderInterface
-     */
     public function createItemMetadataExpander(): ItemMetadataExpanderInterface
     {
         return new ItemMetadataExpander(
@@ -80,9 +74,6 @@ class SalesProductConnectorBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\SalesProductConnector\Business\Expander\ProductIdExpanderInterface
-     */
     public function createProductIdExpander(): ProductIdExpanderInterface
     {
         return new ProductIdExpander(
@@ -90,17 +81,11 @@ class SalesProductConnectorBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\SalesProductConnector\Business\Expander\OrderExpanderInterface
-     */
     public function createOrderExpander(): OrderExpanderInterface
     {
         return new OrderExpander($this->createItemMetadataExpander());
     }
 
-    /**
-     * @return \Spryker\Zed\SalesProductConnector\Business\Expander\PopularityProductPageExpanderInterface
-     */
     public function createPopularityProductPageExpander(): PopularityProductPageExpanderInterface
     {
         return new PopularityProductPageExpander(
@@ -109,9 +94,6 @@ class SalesProductConnectorBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\SalesProductConnector\Business\Reader\ProductAbstractIdsRefreshReaderInterface
-     */
     public function createProductAbstractIdsRefreshReader(): ProductAbstractIdsRefreshReaderInterface
     {
         return new ProductAbstractIdsRefreshReader(
@@ -120,9 +102,6 @@ class SalesProductConnectorBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\SalesProductConnector\Business\Deleter\SalesOrderItemMetadataDeleterInterface
-     */
     public function createSalesOrderItemMetadataDeleter(): SalesOrderItemMetadataDeleterInterface
     {
         return new SalesOrderItemMetadataDeleter($this->getEntityManager());

@@ -13,18 +13,10 @@ use Spryker\Zed\SalesProductConnector\Persistence\SalesProductConnectorEntityMan
 
 class SalesOrderItemMetadataDeleter implements SalesOrderItemMetadataDeleterInterface
 {
-    /**
-     * @param \Spryker\Zed\SalesProductConnector\Persistence\SalesProductConnectorEntityManagerInterface $salesProductConnectorEntityManager
-     */
     public function __construct(protected SalesProductConnectorEntityManagerInterface $salesProductConnectorEntityManager)
     {
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderItemMetadataCollectionDeleteCriteriaTransfer $salesOrderItemMetadataCollectionDeleteCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderItemMetadataCollectionResponseTransfer
-     */
     public function deleteSalesOrderItemMetadataCollection(
         SalesOrderItemMetadataCollectionDeleteCriteriaTransfer $salesOrderItemMetadataCollectionDeleteCriteriaTransfer
     ): SalesOrderItemMetadataCollectionResponseTransfer {

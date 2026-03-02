@@ -34,9 +34,6 @@ class ExpandOrdersWithMetadataTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -44,9 +41,6 @@ class ExpandOrdersWithMetadataTest extends Unit
         $this->tester->configureTestStateMachine([static::DEFAULT_OMS_PROCESS_NAME]);
     }
 
-    /**
-     * @return void
-     */
     public function testExpandOrdersWithMetadataWillExpandItems(): void
     {
         // Arrange
@@ -71,9 +65,6 @@ class ExpandOrdersWithMetadataTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testExpandOrdersWithMetadataWillThrowExceptionOnMissingIdSalesOrder(): void
     {
         // Arrange
@@ -87,9 +78,6 @@ class ExpandOrdersWithMetadataTest extends Unit
         $this->tester->getFacade()->expandOrdersWithMetadata([$orderTransfer]);
     }
 
-    /**
-     * @return void
-     */
     public function testExpandOrdersWithMetadataWillThrowExceptionOnMissingFkSalesOrder(): void
     {
         // Arrange

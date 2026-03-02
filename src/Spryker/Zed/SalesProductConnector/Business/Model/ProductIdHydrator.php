@@ -20,9 +20,6 @@ class ProductIdHydrator implements ProductIdHydratorInterface
      */
     protected $salesProductConnectorQueryContainer;
 
-    /**
-     * @param \Spryker\Zed\SalesProductConnector\Persistence\SalesProductConnectorQueryContainerInterface $SalesProductConnectorQueryContainer
-     */
     public function __construct(SalesProductConnectorQueryContainerInterface $SalesProductConnectorQueryContainer)
     {
         $this->salesProductConnectorQueryContainer = $SalesProductConnectorQueryContainer;

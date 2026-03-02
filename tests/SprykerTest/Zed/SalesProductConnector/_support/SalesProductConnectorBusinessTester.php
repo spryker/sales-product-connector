@@ -42,11 +42,6 @@ class SalesProductConnectorBusinessTester extends Actor
 {
     use _generated\SalesProductConnectorBusinessTesterActions;
 
-    /**
-     * @param string $stateMachineProcessName
-     *
-     * @return \Generated\Shared\Transfer\OrderTransfer
-     */
     public function createOrderByStateMachineProcessName(string $stateMachineProcessName): OrderTransfer
     {
         $quoteTransfer = $this->buildFakeQuote(
@@ -64,17 +59,11 @@ class SalesProductConnectorBusinessTester extends Actor
             ->setItems($saveOrderTransfer->getOrderItems());
     }
 
-    /**
-     * @return void
-     */
     public function ensureSalesOrderDatabaseTableIsEmpty(): void
     {
         $this->ensureDatabaseTableIsEmpty($this->getSalesOrderQuery());
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     public function createQuote(): QuoteTransfer
     {
         return $this->buildFakeQuote(
@@ -83,12 +72,6 @@ class SalesProductConnectorBusinessTester extends Actor
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     * @param string $stateMachineProcessName
-     *
-     * @return \Generated\Shared\Transfer\SaveOrderTransfer
-     */
     public function createSaveOrder(QuoteTransfer $quoteTransfer, string $stateMachineProcessName): SaveOrderTransfer
     {
         return $this->haveOrderFromQuote($quoteTransfer, $stateMachineProcessName, [new ItemMetadataSaverPlugin()]);
@@ -106,11 +89,6 @@ class SalesProductConnectorBusinessTester extends Actor
             ->find();
     }
 
-    /**
-     * @param int $idSalesOrderItem
-     *
-     * @return int
-     */
     public function haveSalesOrderItemMetaData(int $idSalesOrderItem): int
     {
         $salesOrderItemMetadataEntity = (new SpySalesOrderItemMetadata())
@@ -121,20 +99,11 @@ class SalesProductConnectorBusinessTester extends Actor
         return $salesOrderItemMetadataEntity->getIdSalesOrderItemMetadata();
     }
 
-    /**
-     * @return \Orm\Zed\Sales\Persistence\SpySalesOrderItemMetadataQuery
-     */
     public function getSalesOrderItemMetadataQuery(): SpySalesOrderItemMetadataQuery
     {
         return SpySalesOrderItemMetadataQuery::create();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     * @param \Generated\Shared\Transfer\StoreTransfer $storeTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     protected function buildFakeQuote(CustomerTransfer $customerTransfer, StoreTransfer $storeTransfer): QuoteTransfer
     {
         $productConcreteTransfer = $this->haveProduct();
@@ -162,9 +131,6 @@ class SalesProductConnectorBusinessTester extends Actor
         return $quoteTransfer;
     }
 
-    /**
-     * @return \Orm\Zed\Sales\Persistence\SpySalesOrderQuery
-     */
     protected function getSalesOrderQuery(): SpySalesOrderQuery
     {
         return SpySalesOrderQuery::create();

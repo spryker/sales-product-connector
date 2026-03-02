@@ -33,11 +33,6 @@ interface SalesProductConnectorRepositoryInterface
      */
     public function getRawProductPopularityByProductAbstractIdsAndInterval(array $productAbstractIds, int $interval): array;
 
-    /**
-     * @param int $interval
-     *
-     * @return array
-     */
     public function getProductAbstractIdsForRefreshByInterval(int $interval): array;
 
     /**

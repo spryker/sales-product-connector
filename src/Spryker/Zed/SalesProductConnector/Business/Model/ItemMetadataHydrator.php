@@ -28,10 +28,6 @@ class ItemMetadataHydrator implements ItemMetadataHydratorInterface
      */
     protected $salesProductConnectorQueryContainer;
 
-    /**
-     * @param \Spryker\Zed\SalesProductConnector\Dependency\Service\SalesProductConnectorToUtilEncodingInterface $utilEncodingService
-     * @param \Spryker\Zed\SalesProductConnector\Persistence\SalesProductConnectorQueryContainerInterface $SalesProductConnectorQueryContainer
-     */
     public function __construct(
         SalesProductConnectorToUtilEncodingInterface $utilEncodingService,
         SalesProductConnectorQueryContainerInterface $SalesProductConnectorQueryContainer

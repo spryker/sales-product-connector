@@ -100,11 +100,6 @@ class SalesProductConnectorRepository extends AbstractRepository implements Sale
         return $productPopularityData->toArray(static::FIELD_FK_PRODUCT_ABSTRACT);
     }
 
-    /**
-     * @param int $interval
-     *
-     * @return array
-     */
     public function getProductAbstractIdsForRefreshByInterval(int $interval): array
     {
         $salesOrderQuery = $this->getFactory()->createSalesOrderItemQuery();
@@ -182,12 +177,6 @@ class SalesProductConnectorRepository extends AbstractRepository implements Sale
             ->withColumn(SpyProductTableMap::COL_FK_PRODUCT_ABSTRACT, static::FIELD_FK_PRODUCT_ABSTRACT);
     }
 
-    /**
-     * @param \Orm\Zed\Sales\Persistence\SpySalesOrderItemQuery $query
-     * @param int $interval
-     *
-     * @return void
-     */
     protected function addWhereByInterval(SpySalesOrderItemQuery $query, int $interval): void
     {
         $dateNow = new DateTimeImmutable();

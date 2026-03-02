@@ -42,9 +42,6 @@ class ExpandProductAbstractPageWithPopularityTest extends Unit
      */
     protected $tester;
 
-      /**
-       * @return void
-       */
     protected function setUp(): void
     {
         parent::setUp();
@@ -52,9 +49,6 @@ class ExpandProductAbstractPageWithPopularityTest extends Unit
         $this->tester->configureTestStateMachine([static::DEFAULT_OMS_PROCESS_NAME]);
     }
 
-    /**
-     * @return void
-     */
     public function testExpandProductAbstractPageWithEmptyPopularityTest(): void
     {
         // Arrange
@@ -79,9 +73,6 @@ class ExpandProductAbstractPageWithPopularityTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testExpandProductAbstractPageWithNotEmptyPopularityTest(): void
     {
         // Arrange
@@ -124,11 +115,6 @@ class ExpandProductAbstractPageWithPopularityTest extends Unit
         }
     }
 
-    /**
-     * @param array $seedData
-     *
-     * @return \Generated\Shared\Transfer\ProductPayloadTransfer
-     */
     protected function getProductPayloadTransfer(array $seedData): ProductPayloadTransfer
     {
         return (new ProductPayloadBuilder())->seed($seedData)->build();

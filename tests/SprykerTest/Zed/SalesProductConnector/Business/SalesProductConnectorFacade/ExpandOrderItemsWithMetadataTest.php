@@ -38,9 +38,6 @@ class ExpandOrderItemsWithMetadataTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -48,9 +45,6 @@ class ExpandOrderItemsWithMetadataTest extends Unit
         $this->tester->configureTestStateMachine([static::DEFAULT_OMS_PROCESS_NAME]);
     }
 
-    /**
-     * @return void
-     */
     public function testExpandOrderItemsWithMetadata(): void
     {
         // Arrange
@@ -66,9 +60,6 @@ class ExpandOrderItemsWithMetadataTest extends Unit
         $this->assertNotNull($itemTransfers[0]->getMetadata()->getImage());
     }
 
-    /**
-     * @return void
-     */
     public function testExpandOrderItemsWithMetadataWithoutIdSalesOrderItem(): void
     {
         // Act
@@ -86,9 +77,6 @@ class ExpandOrderItemsWithMetadataTest extends Unit
         $this->assertNull($itemTransfers[2]->getMetadata());
     }
 
-    /**
-     * @return void
-     */
     public function testExpandOrderItemsWithMetadataWithFakeIdSalesOrderItem(): void
     {
         // Act

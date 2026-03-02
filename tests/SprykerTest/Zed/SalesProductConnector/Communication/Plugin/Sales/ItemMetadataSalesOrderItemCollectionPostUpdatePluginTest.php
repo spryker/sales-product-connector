@@ -43,9 +43,6 @@ class ItemMetadataSalesOrderItemCollectionPostUpdatePluginTest extends Unit
      */
     protected SalesProductConnectorCommunicationTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -54,9 +51,6 @@ class ItemMetadataSalesOrderItemCollectionPostUpdatePluginTest extends Unit
         $this->tester->ensureSalesOrderItemMetadataDatabaseTableIsEmpty();
     }
 
-    /**
-     * @return void
-     */
     public function testShouldCreateItemMetadata(): void
     {
         // Arrange
@@ -71,9 +65,6 @@ class ItemMetadataSalesOrderItemCollectionPostUpdatePluginTest extends Unit
         $this->assertSalesOrderItemItemMetadataEntity($quoteTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldUpdateItemMetadata(): void
     {
         // Arrange
@@ -91,9 +82,6 @@ class ItemMetadataSalesOrderItemCollectionPostUpdatePluginTest extends Unit
         $this->assertSalesOrderItemItemMetadataEntity($quoteTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowNullValueExceptionWhenIdSalesOrderItemIsNotSet(): void
     {
         // Arrange
@@ -111,11 +99,6 @@ class ItemMetadataSalesOrderItemCollectionPostUpdatePluginTest extends Unit
         (new ItemMetadataSalesOrderItemCollectionPostUpdatePlugin())->postUpdate($salesOrderItemCollectionResponseTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return void
-     */
     protected function assertSalesOrderItemItemMetadataEntity(QuoteTransfer $quoteTransfer): void
     {
         /** @var \Generated\Shared\Transfer\ItemTransfer $itemTransfer */
@@ -132,11 +115,6 @@ class ItemMetadataSalesOrderItemCollectionPostUpdatePluginTest extends Unit
         );
     }
 
-    /**
-     * @param bool|null $withMetadata
-     *
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     protected function createOrder(?bool $withMetadata = false): QuoteTransfer
     {
         $quoteTransfer = (new QuoteBuilder())

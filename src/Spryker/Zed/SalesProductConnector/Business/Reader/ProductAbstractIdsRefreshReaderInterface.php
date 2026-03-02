@@ -11,8 +11,5 @@ use Generated\Shared\Transfer\ProductPageLoadTransfer;
 
 interface ProductAbstractIdsRefreshReaderInterface
 {
-    /**
-     * @return \Generated\Shared\Transfer\ProductPageLoadTransfer
-     */
     public function getProductProductPageLoadTransferForRefresh(): ProductPageLoadTransfer;
 }

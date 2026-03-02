@@ -31,9 +31,6 @@ class SalesProductConnectorCommunicationTester extends Actor
 {
     use _generated\SalesProductConnectorCommunicationTesterActions;
 
-    /**
-     * @return void
-     */
     public function ensureSalesOrderItemMetadataDatabaseTableIsEmpty(): void
     {
         $this->ensureDatabaseTableIsEmpty(
@@ -41,19 +38,11 @@ class SalesProductConnectorCommunicationTester extends Actor
         );
     }
 
-    /**
-     * @return \Orm\Zed\Sales\Persistence\SpySalesOrderItemMetadataQuery
-     */
     public function getSalesOrderItemMetadataQuery(): SpySalesOrderItemMetadataQuery
     {
         return SpySalesOrderItemMetadataQuery::create();
     }
 
-    /**
-     * @param int $idSalesOrderItem
-     *
-     * @return \Orm\Zed\Sales\Persistence\SpySalesOrderItemMetadata
-     */
     public function findSalesOrderItemMetadata(int $idSalesOrderItem): SpySalesOrderItemMetadata
     {
         return $this->getSalesOrderItemMetadataQuery()

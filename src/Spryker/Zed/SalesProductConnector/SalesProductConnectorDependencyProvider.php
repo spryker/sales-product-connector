@@ -63,11 +63,6 @@ class SalesProductConnectorDependencyProvider extends AbstractBundleDependencyPr
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addProductQueryContainer(Container $container): Container
     {
         $container->set(static::QUERY_CONTAINER_PRODUCT, function (Container $container) {
@@ -77,11 +72,6 @@ class SalesProductConnectorDependencyProvider extends AbstractBundleDependencyPr
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addUtilEncodingService(Container $container): Container
     {
         $container->set(static::SERVICE_UTIL_ENCODING, function (Container $container) {
@@ -93,11 +83,6 @@ class SalesProductConnectorDependencyProvider extends AbstractBundleDependencyPr
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addUtilTextService(Container $container): Container
     {
         $container->set(static::SERVICE_UTIL_TEXT, function (Container $container): SalesProductConnectorToUtilTextServiceBridge {

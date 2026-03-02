@@ -24,10 +24,6 @@ class PopularityProductPageExpander implements PopularityProductPageExpanderInte
      */
     protected $salesProductConnectorConfig;
 
-    /**
-     * @param \Spryker\Zed\SalesProductConnector\Persistence\SalesProductConnectorRepositoryInterface $salesProductConnectorRepository
-     * @param \Spryker\Zed\SalesProductConnector\SalesProductConnectorConfig $salesProductConnectorConfig
-     */
     public function __construct(
         SalesProductConnectorRepositoryInterface $salesProductConnectorRepository,
         SalesProductConnectorConfig $salesProductConnectorConfig
@@ -36,11 +32,6 @@ class PopularityProductPageExpander implements PopularityProductPageExpanderInte
         $this->salesProductConnectorConfig = $salesProductConnectorConfig;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductPageLoadTransfer $productPageLoadTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductPageLoadTransfer
-     */
     public function expandProductPageLoadTransferWithPopularityData(
         ProductPageLoadTransfer $productPageLoadTransfer
     ): ProductPageLoadTransfer {

@@ -33,9 +33,6 @@ class DeleteSalesOrderItemMetadataCollectionTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -43,9 +40,6 @@ class DeleteSalesOrderItemMetadataCollectionTest extends Unit
         $this->tester->configureTestStateMachine([static::DEFAULT_OMS_PROCESS_NAME]);
     }
 
-    /**
-     * @return void
-     */
     public function testDeletesEntitiesBySalesOrderItemIds(): void
     {
         // Arrange
@@ -70,9 +64,6 @@ class DeleteSalesOrderItemMetadataCollectionTest extends Unit
         $this->assertSame($idSalesOrderItemMetadata, $salesOrderItemMetadataTransfers[0]->getIdSalesOrderItemMetadata());
     }
 
-    /**
-     * @return void
-     */
     public function testDoesNotDeleteEntitiesWhenNoEntitiesFoundBySalesOrderItemIds(): void
     {
         // Arrange
@@ -93,9 +84,6 @@ class DeleteSalesOrderItemMetadataCollectionTest extends Unit
         $this->assertSame($idSalesOrderItemMetadata, $salesOrderItemMetadataTransfers[0]->getIdSalesOrderItemMetadata());
     }
 
-    /**
-     * @return void
-     */
     public function testDoesNotDeleteEntitiesWhenNoCriteriaConditionsAreSet(): void
     {
         // Arrange

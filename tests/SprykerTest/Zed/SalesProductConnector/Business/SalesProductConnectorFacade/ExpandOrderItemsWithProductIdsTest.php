@@ -38,9 +38,6 @@ class ExpandOrderItemsWithProductIdsTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -48,9 +45,6 @@ class ExpandOrderItemsWithProductIdsTest extends Unit
         $this->tester->configureTestStateMachine([static::DEFAULT_OMS_PROCESS_NAME]);
     }
 
-    /**
-     * @return void
-     */
     public function testExpandOrderItemsWithProductIds(): void
     {
         // Arrange
@@ -66,9 +60,6 @@ class ExpandOrderItemsWithProductIdsTest extends Unit
         $this->assertNotNull($itemTransfers[0]->getIdProductAbstract());
     }
 
-    /**
-     * @return void
-     */
     public function testExpandOrderItemsWithProductIdsWithoutSku(): void
     {
         // Act
@@ -86,9 +77,6 @@ class ExpandOrderItemsWithProductIdsTest extends Unit
         $this->assertNull($itemTransfers[2]->getId());
     }
 
-    /**
-     * @return void
-     */
     public function testExpandOrderItemsWithProductIdsWithFakeSku(): void
     {
         // Act

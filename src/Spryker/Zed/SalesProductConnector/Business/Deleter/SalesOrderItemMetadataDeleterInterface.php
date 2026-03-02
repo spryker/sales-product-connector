@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\SalesOrderItemMetadataCollectionResponseTransfer;
 
 interface SalesOrderItemMetadataDeleterInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderItemMetadataCollectionDeleteCriteriaTransfer $salesOrderItemMetadataCollectionDeleteCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderItemMetadataCollectionResponseTransfer
-     */
     public function deleteSalesOrderItemMetadataCollection(
         SalesOrderItemMetadataCollectionDeleteCriteriaTransfer $salesOrderItemMetadataCollectionDeleteCriteriaTransfer
     ): SalesOrderItemMetadataCollectionResponseTransfer;

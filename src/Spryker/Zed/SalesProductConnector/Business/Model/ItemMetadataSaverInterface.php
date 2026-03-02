@@ -12,18 +12,8 @@ use Generated\Shared\Transfer\SalesOrderItemCollectionResponseTransfer;
 
 interface ItemMetadataSaverInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return void
-     */
     public function saveItemsMetadata(QuoteTransfer $quoteTransfer): void;
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderItemCollectionResponseTransfer $salesOrderItemCollectionResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderItemCollectionResponseTransfer
-     */
     public function updateOrderItemMetadata(
         SalesOrderItemCollectionResponseTransfer $salesOrderItemCollectionResponseTransfer
     ): SalesOrderItemCollectionResponseTransfer;

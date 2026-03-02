@@ -14,9 +14,6 @@ class OrderExpander implements OrderExpanderInterface
      */
     protected $itemMetadataExpander;
 
-    /**
-     * @param \Spryker\Zed\SalesProductConnector\Business\Expander\ItemMetadataExpanderInterface $itemMetadataExpander
-     */
     public function __construct(ItemMetadataExpanderInterface $itemMetadataExpander)
     {
         $this->itemMetadataExpander = $itemMetadataExpander;

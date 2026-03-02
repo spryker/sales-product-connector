@@ -17,21 +17,12 @@ class ItemMetadataSaver implements ItemMetadataSaverInterface
 {
     use TransactionTrait;
 
-    /**
-     * @param \Spryker\Zed\SalesProductConnector\Persistence\SalesProductConnectorEntityManagerInterface $salesProductConnectorEntityManager
-     * @param \Spryker\Zed\SalesProductConnector\Persistence\SalesProductConnectorRepositoryInterface $salesProductConnectorRepository
-     */
     public function __construct(
         protected SalesProductConnectorEntityManagerInterface $salesProductConnectorEntityManager,
         protected SalesProductConnectorRepositoryInterface $salesProductConnectorRepository
     ) {
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return void
-     */
     public function saveItemsMetadata(QuoteTransfer $quoteTransfer): void
     {
         $this->getTransactionHandler()->handleTransaction(function () use ($quoteTransfer): void {
@@ -39,11 +30,6 @@ class ItemMetadataSaver implements ItemMetadataSaverInterface
         });
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderItemCollectionResponseTransfer $salesOrderItemCollectionResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderItemCollectionResponseTransfer
-     */
     public function updateOrderItemMetadata(
         SalesOrderItemCollectionResponseTransfer $salesOrderItemCollectionResponseTransfer
     ): SalesOrderItemCollectionResponseTransfer {
@@ -56,11 +42,6 @@ class ItemMetadataSaver implements ItemMetadataSaverInterface
         return $salesOrderItemCollectionResponseTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return void
-     */
     protected function executeSaveItemsMetadataTransaction(QuoteTransfer $quoteTransfer): void
     {
         $this->salesProductConnectorEntityManager->saveItemsMetadata(
@@ -69,11 +50,6 @@ class ItemMetadataSaver implements ItemMetadataSaverInterface
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return void
-     */
     protected function executeUpdateItemsMetadataTransaction(QuoteTransfer $quoteTransfer): void
     {
         $this->salesProductConnectorEntityManager->saveItemsMetadataByFkSalesOrderItem(

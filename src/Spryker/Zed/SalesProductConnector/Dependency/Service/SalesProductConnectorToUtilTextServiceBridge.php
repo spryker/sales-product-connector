@@ -22,13 +22,6 @@ class SalesProductConnectorToUtilTextServiceBridge implements SalesProductConnec
         $this->utilTextService = $utilTextService;
     }
 
-    /**
-     * @param string $string
-     * @param string $separator
-     * @param bool $upperCaseFirst
-     *
-     * @return string
-     */
     public function separatorToCamelCase(string $string, string $separator = '-', bool $upperCaseFirst = false): string
     {
         return $this->utilTextService->separatorToCamelCase($string, $separator, $upperCaseFirst);

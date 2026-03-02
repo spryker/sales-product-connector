@@ -23,10 +23,6 @@ class ProductAbstractIdsRefreshReader implements ProductAbstractIdsRefreshReader
      */
     protected $salesProductConnectorConfig;
 
-    /**
-     * @param \Spryker\Zed\SalesProductConnector\Persistence\SalesProductConnectorRepositoryInterface $salesProductConnectorRepository
-     * @param \Spryker\Zed\SalesProductConnector\SalesProductConnectorConfig $salesProductConnectorConfig
-     */
     public function __construct(
         SalesProductConnectorRepositoryInterface $salesProductConnectorRepository,
         SalesProductConnectorConfig $salesProductConnectorConfig
@@ -35,9 +31,6 @@ class ProductAbstractIdsRefreshReader implements ProductAbstractIdsRefreshReader
         $this->salesProductConnectorConfig = $salesProductConnectorConfig;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\ProductPageLoadTransfer
-     */
     public function getProductProductPageLoadTransferForRefresh(): ProductPageLoadTransfer
     {
         $interval = $this->salesProductConnectorConfig->getProductPageDataRefreshDaysInterval();

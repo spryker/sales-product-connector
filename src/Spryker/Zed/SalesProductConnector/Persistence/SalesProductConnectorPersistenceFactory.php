@@ -24,25 +24,16 @@ use Spryker\Zed\SalesProductConnector\SalesProductConnectorDependencyProvider;
  */
 class SalesProductConnectorPersistenceFactory extends AbstractPersistenceFactory
 {
-    /**
-     * @return \Orm\Zed\Sales\Persistence\SpySalesOrderItemMetadataQuery
-     */
     public function createProductMetadataQuery(): SpySalesOrderItemMetadataQuery
     {
         return SpySalesOrderItemMetadataQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\Sales\Persistence\SpySalesOrderItemQuery
-     */
     public function createSalesOrderItemQuery(): SpySalesOrderItemQuery
     {
         return SpySalesOrderItemQuery::create();
     }
 
-    /**
-     * @return \Spryker\Zed\SalesProductConnector\Persistence\Propel\Mapper\SalesOrderItemMetadataMapper
-     */
     public function createSalesOrderItemMetadataMapper(): SalesOrderItemMetadataMapper
     {
         return new SalesOrderItemMetadataMapper(
@@ -52,9 +43,6 @@ class SalesProductConnectorPersistenceFactory extends AbstractPersistenceFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\SalesProductConnector\Persistence\Propel\Mapper\ProductMapper
-     */
     public function createProductMapper(): ProductMapper
     {
         return new ProductMapper();
@@ -68,25 +56,16 @@ class SalesProductConnectorPersistenceFactory extends AbstractPersistenceFactory
         return $this->getProvidedDependency(SalesProductConnectorDependencyProvider::QUERY_CONTAINER_PRODUCT);
     }
 
-    /**
-     * @return \Spryker\Zed\SalesProductConnector\Dependency\Service\SalesProductConnectorToUtilEncodingInterface
-     */
     public function getUtilEncodingService(): SalesProductConnectorToUtilEncodingInterface
     {
         return $this->getProvidedDependency(SalesProductConnectorDependencyProvider::SERVICE_UTIL_ENCODING);
     }
 
-    /**
-     * @return \Spryker\Zed\SalesProductConnector\Dependency\Service\SalesProductConnectorToUtilTextServiceInterface
-     */
     public function getUtilTextService(): SalesProductConnectorToUtilTextServiceInterface
     {
         return $this->getProvidedDependency(SalesProductConnectorDependencyProvider::SERVICE_UTIL_TEXT);
     }
 
-    /**
-     * @return \Spryker\Zed\SalesProductConnector\Persistence\SalesProductConnectorQueryContainerInterface
-     */
     public function getSalesProductConnectorQueryContainer(): SalesProductConnectorQueryContainerInterface
     {
         return $this->getQueryContainer();
