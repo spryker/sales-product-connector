@@ -20,9 +20,9 @@ class ProductIdHydrator implements ProductIdHydratorInterface
      */
     protected $salesProductConnectorQueryContainer;
 
-    public function __construct(SalesProductConnectorQueryContainerInterface $SalesProductConnectorQueryContainer)
+    public function __construct(SalesProductConnectorQueryContainerInterface $salesProductConnectorQueryContainer)
     {
-        $this->salesProductConnectorQueryContainer = $SalesProductConnectorQueryContainer;
+        $this->salesProductConnectorQueryContainer = $salesProductConnectorQueryContainer;
     }
 
     /**

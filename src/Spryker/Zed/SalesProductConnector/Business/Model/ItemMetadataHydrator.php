@@ -30,9 +30,9 @@ class ItemMetadataHydrator implements ItemMetadataHydratorInterface
 
     public function __construct(
         SalesProductConnectorToUtilEncodingInterface $utilEncodingService,
-        SalesProductConnectorQueryContainerInterface $SalesProductConnectorQueryContainer
+        SalesProductConnectorQueryContainerInterface $salesProductConnectorQueryContainer
     ) {
-        $this->salesProductConnectorQueryContainer = $SalesProductConnectorQueryContainer;
+        $this->salesProductConnectorQueryContainer = $salesProductConnectorQueryContainer;
         $this->utilEncodingService = $utilEncodingService;
     }
 

@@ -12,14 +12,14 @@ class ProductToSalesProductConnectorQueryContainerBridge implements ProductToSal
     /**
      * @var \Spryker\Zed\Product\Persistence\ProductQueryContainerInterface
      */
-    protected $ProductQueryContainer;
+    protected $productQueryContainer;
 
     /**
-     * @param \Spryker\Zed\Product\Persistence\ProductQueryContainerInterface $ProductQueryContainer
+     * @param \Spryker\Zed\Product\Persistence\ProductQueryContainerInterface $productQueryContainer
      */
-    public function __construct($ProductQueryContainer)
+    public function __construct($productQueryContainer)
     {
-        $this->ProductQueryContainer = $ProductQueryContainer;
+        $this->productQueryContainer = $productQueryContainer;
     }
 
     /**
@@ -29,7 +29,7 @@ class ProductToSalesProductConnectorQueryContainerBridge implements ProductToSal
      */
     public function queryProductConcreteBySku($sku)
     {
-        return $this->ProductQueryContainer->queryProductConcreteBySku($sku);
+        return $this->productQueryContainer->queryProductConcreteBySku($sku);
     }
 
     /**
@@ -37,7 +37,7 @@ class ProductToSalesProductConnectorQueryContainerBridge implements ProductToSal
      */
     public function queryProductAttributeKey()
     {
-        return $this->ProductQueryContainer->queryProductAttributeKey();
+        return $this->productQueryContainer->queryProductAttributeKey();
     }
 
     /**
@@ -45,6 +45,6 @@ class ProductToSalesProductConnectorQueryContainerBridge implements ProductToSal
      */
     public function queryProduct()
     {
-        return $this->ProductQueryContainer->queryProduct();
+        return $this->productQueryContainer->queryProduct();
     }
 }
