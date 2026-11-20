@@ -12,6 +12,8 @@ use Propel\Runtime\Collection\Collection;
 
 class ProductMapper
 {
+    public const string COLUMN_ABSTRACT_SKU = 'abstract_sku';
+
     /**
      * @param \Propel\Runtime\Collection\Collection<\Orm\Zed\Product\Persistence\SpyProduct> $productEntities
      *
@@ -24,7 +26,8 @@ class ProductMapper
         foreach ($productEntities as $productEntity) {
             $productConcreteTransfer[] = (new ProductConcreteTransfer())
                 ->fromArray($productEntity->toArray(), true)
-                ->setIdProductConcrete($productEntity->getIdProduct());
+                ->setIdProductConcrete($productEntity->getIdProduct())
+                ->setAbstractSku($productEntity->getVirtualColumn(static::COLUMN_ABSTRACT_SKU));
         }
 
         return $productConcreteTransfer;

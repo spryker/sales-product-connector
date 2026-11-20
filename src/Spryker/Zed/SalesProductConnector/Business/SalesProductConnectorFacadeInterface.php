@@ -102,6 +102,7 @@ interface SalesProductConnectorFacadeInterface
     /**
      * Specification:
      * - Hydrates product ids (abstract / concrete) into an order items based on their skus.
+     * - Expands the order items with `ItemTransfer.abstractSku`, the SKU of their abstract product.
      *
      * @api
      *

@@ -58,6 +58,10 @@ class ExpandOrderItemsWithProductIdsTest extends Unit
         // Assert
         $this->assertNotNull($itemTransfers[0]->getId());
         $this->assertNotNull($itemTransfers[0]->getIdProductAbstract());
+        $this->assertSame(
+            $this->tester->getLocator()->product()->facade()->getAbstractSkuFromProductConcrete($itemTransfers[0]->getSku()),
+            $itemTransfers[0]->getAbstractSku(),
+        );
     }
 
     public function testExpandOrderItemsWithProductIdsWithoutSku(): void
@@ -89,5 +93,6 @@ class ExpandOrderItemsWithProductIdsTest extends Unit
         // Assert
         $this->assertNull($itemTransfers[0]->getId());
         $this->assertNull($itemTransfers[0]->getIdProductAbstract());
+        $this->assertNull($itemTransfers[0]->getAbstractSku());
     }
 }

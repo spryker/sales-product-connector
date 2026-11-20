@@ -43,6 +43,18 @@ class SalesProductConnectorCommunicationTester extends Actor
         return SpySalesOrderItemMetadataQuery::create();
     }
 
+    /**
+     * @param array<string, mixed> $superAttributes
+     */
+    public function haveSalesOrderItemMetadata(int $idSalesOrderItem, array $superAttributes): void
+    {
+        (new SpySalesOrderItemMetadata())
+            ->setFkSalesOrderItem($idSalesOrderItem)
+            ->setSuperAttributes((string)json_encode($superAttributes))
+            ->setImage('')
+            ->save();
+    }
+
     public function findSalesOrderItemMetadata(int $idSalesOrderItem): SpySalesOrderItemMetadata
     {
         return $this->getSalesOrderItemMetadataQuery()

@@ -14,6 +14,8 @@ use Spryker\Zed\SalesProductConnector\Business\Expander\ItemMetadataExpander;
 use Spryker\Zed\SalesProductConnector\Business\Expander\ItemMetadataExpanderInterface;
 use Spryker\Zed\SalesProductConnector\Business\Expander\OrderExpander;
 use Spryker\Zed\SalesProductConnector\Business\Expander\OrderExpanderInterface;
+use Spryker\Zed\SalesProductConnector\Business\Expander\OrderItemSelectedVariantAttributesExpander;
+use Spryker\Zed\SalesProductConnector\Business\Expander\OrderItemSelectedVariantAttributesExpanderInterface;
 use Spryker\Zed\SalesProductConnector\Business\Expander\PopularityProductPageExpander;
 use Spryker\Zed\SalesProductConnector\Business\Expander\PopularityProductPageExpanderInterface;
 use Spryker\Zed\SalesProductConnector\Business\Expander\ProductIdExpander;
@@ -72,6 +74,11 @@ class SalesProductConnectorBusinessFactory extends AbstractBusinessFactory
         return new ItemMetadataExpander(
             $this->getRepository(),
         );
+    }
+
+    public function createOrderItemSelectedVariantAttributesExpander(): OrderItemSelectedVariantAttributesExpanderInterface
+    {
+        return new OrderItemSelectedVariantAttributesExpander($this->getRepository());
     }
 
     public function createProductIdExpander(): ProductIdExpanderInterface

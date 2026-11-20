@@ -42,6 +42,7 @@ class ProductIdExpander implements ProductIdExpanderInterface
 
             $itemTransfer->setId($productConcreteTransfer->getIdProductConcrete());
             $itemTransfer->setIdProductAbstract($productConcreteTransfer->getFkProductAbstract());
+            $itemTransfer->setAbstractSku($productConcreteTransfer->getAbstractSku());
         }
 
         return $itemTransfers;

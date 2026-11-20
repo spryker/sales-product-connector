@@ -21,6 +21,8 @@
         <property name="concreteAttributes" type="array" singular="concreteAttribute"/>
         <property name="idSalesOrderItem" type="int"/>
         <property name="fkSalesOrder" type="int"/>
+        <property name="abstractSku" type="string"/>
+        <property name="selectedVariantAttributes" type="array" singular="selectedVariantAttribute" description="The super attributes of the concrete product, attribute key to value, ordered by attribute key as strings, e.g. {&quot;color&quot;: &quot;Red&quot;, &quot;storage_capacity&quot;: &quot;64 GB&quot;}; set when the item is added to the cart, and from the order item's super attributes when an order is read."/>
     </transfer>
 
     <transfer name="Quote">
@@ -46,6 +48,7 @@
         <property name="idProductConcrete" type="int"/>
         <property name="fkProductAbstract" type="int"/>
         <property name="sku" type="string"/>
+        <property name="abstractSku" type="string"/>
     </transfer>
 
     <transfer name="ProductPayload">

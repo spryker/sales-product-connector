@@ -11,11 +11,13 @@ use DateInterval;
 use DateTimeImmutable;
 use Generated\Shared\Transfer\ProductPayloadTransfer;
 use Generated\Shared\Transfer\QuoteTransfer;
+use Orm\Zed\Product\Persistence\Map\SpyProductAbstractTableMap;
 use Orm\Zed\Product\Persistence\Map\SpyProductTableMap;
 use Orm\Zed\Sales\Persistence\Map\SpySalesOrderItemTableMap;
 use Orm\Zed\Sales\Persistence\SpySalesOrderItemQuery;
 use Propel\Runtime\ActiveQuery\Criteria;
 use Spryker\Zed\Kernel\Persistence\AbstractRepository;
+use Spryker\Zed\SalesProductConnector\Persistence\Propel\Mapper\ProductMapper;
 
 /**
  * @method \Spryker\Zed\SalesProductConnector\Persistence\SalesProductConnectorPersistenceFactory getFactory()
@@ -47,15 +49,20 @@ class SalesProductConnectorRepository extends AbstractRepository implements Sale
     }
 
     /**
+     * @module Product
+     *
      * @param array<string> $productConcreteSkus
      *
      * @return array<\Generated\Shared\Transfer\ProductConcreteTransfer>
      */
     public function getRawProductConcreteTransfersByConcreteSkus(array $productConcreteSkus): array
     {
+        // Only the abstract SKU is joined in: without it every product lazy-loads its whole abstract product.
         $productQuery = $this->getFactory()
             ->getProductQueryContainer()
             ->queryProduct()
+            ->joinSpyProductAbstract()
+            ->withColumn(SpyProductAbstractTableMap::COL_SKU, ProductMapper::COLUMN_ABSTRACT_SKU)
             ->filterBySku_In($productConcreteSkus);
 
         return $this->getFactory()
